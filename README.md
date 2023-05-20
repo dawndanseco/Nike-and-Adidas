@@ -1,1 +1,1 @@
-# Nike-and-Adidas Identifier
+#Coca Cola and Pepsi Detector
