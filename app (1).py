@@ -6,15 +6,15 @@ import cv2
 
 def main():
     # set up the Streamlit app
-    st.write("Name: Andre Christian G. Dalmacio")
+    st.write("Name: Dawn Alyssa B. Danseco")
     st.write("Section: CPE32S5")
     st.write("Instructor: Dr. Jonathan Taylar")
-    st.title("Lights Classification ( Lamp/Chandelier)")
-    st.write("This app classifies whether an uploaded image contains a Lamp or Chandelier images using a pre-trained convolutional neural network model.")
+    st.title("Coca Cola and Pepsi Dectector ( Coca Cola/Pepsi)")
+    st.write("This app classifies whether the image is a Coca Cola and Pepsi bottle can. Timages using a pre-trained convolutional neural network model.")
    
     @st.cache_resource
     def load_model():
-        model = tf.keras.models.load_model('weights-improvement-07-0.98.hdf5')
+        model = tf.keras.models.load_model('weights-improvement-10-0.97.hdf5')
         return model
     
     def import_and_predict(image_data, model):
@@ -27,10 +27,10 @@ def main():
         return prediction
 
     model = load_model()
-    class_names = ["Chandelier", "Lamp"]
+    class_names = ["Pepsi", "Coca Cla"]
     
 
-    file = st.file_uploader("Choose a Lamp or Chandelier picture from your computer", type=["jpg", "png", "jpeg"])
+    file = st.file_uploader("Choose a Coke or Pepsi picture from your computer files!", type=["jpg", "png", "jpeg"])
 
     if file is None:
         st.text("Please upload an image file")
